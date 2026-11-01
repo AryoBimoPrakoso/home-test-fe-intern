@@ -10,7 +10,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
-  const [searchLoading, setSearchLoading] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
   const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
@@ -28,11 +28,11 @@ function App() {
   }, [])
 
   const searchData = data.filter((user) =>
-    user.name.toLowerCase().includes(searchLoading.toLowerCase())
+    user.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   useEffect(() => {
-    const timer = setTimeout(() => setSearchLoading(search), 300);
+    const timer = setTimeout(() => setDebouncedSearch(search), 300);
     return () => clearTimeout(timer);
   }, [search]);
 
