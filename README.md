@@ -1,4 +1,8 @@
-# Pertanyaan Pemahaman
+## Setup Awal
+bun install
+bun run dev 
+
+## Pertanyaan Pemahaman
 
 1. State Management & Lifecycle: Bagaimana cara Anda melakukan fetching data di React? Jika Anda menggunakan useEffect, jelaskan bagaimana cara Anda mencegah terjadinya memory leak atau pemanggilan API berulang (infinite loop).
    Jawab : Saya melakukan pemisahan logic, request saya ditaruh pada services/getUser.js karena bertujuan untuk mengisolasi mengisolasi komponen UI dari detail teknis pengambilan data. Lalu di komponen, saya memakai useEffect dengan dependency array kosong untuk memanggil service tersebut sekali saat komponen mount. Untuk mencegah pemanggilan API berulang (infinite loop),dicegah melalui dependency array kosong di useEffect
