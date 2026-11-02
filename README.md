@@ -1,6 +1,8 @@
-## Setup Awal
+## Menjalankan
+```bash
 bun install
-bun run dev 
+bun run dev
+```
 
 ## Pertanyaan Pemahaman
 
